@@ -1,0 +1,61 @@
+﻿@model IEnumerable<S4CAPP.Data.License>
+
+
+@{
+    ViewData["Title"] = "LicenseDetail";
+}
+
+<h1>LicenseList</h1>
+
+<div class="text-center">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Product Count
+                </th>
+                <th>
+                    Hash
+                </th>
+                <th>
+                    Salt
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LicenseId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LicenseName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductCount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Signature.Hash)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Signature.Salt)
+                    </td>
+
+                    <td>
+                        <a href="@Url.Action("LicenseDetail", "Home", new { id = item.LicenseId })">Detail</a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "LicenseAdd";
+}
+
+<h1>LicenseAdd</h1>
+
+<form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="LicenseAdd">
+    <table>
+        <tr>
+            <td>Name: </td>
+            <td><input type="text" id="Name" name="Name" /></td>
+        </tr>
+        <tr>
+            <td>XmlContent: </td>
+            <td><input type="text" id="xmlData" name="xmlData" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Submit" /></td>
+        </tr>
+    </table>
+</form>
+

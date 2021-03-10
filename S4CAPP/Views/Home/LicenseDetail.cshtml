@@ -1,0 +1,47 @@
+﻿
+@model S4CAPP.Data.License
+
+@{
+    ViewData["Title"] = "LicenseList";
+}
+
+<h1>LicenseList</h1>
+
+<ul class="list-group list-group-flush">
+    <li class="list-group-item">Licence id: @Html.DisplayFor(model => model.LicenseId)</li>
+    <li class="list-group-item">Licence name: @Html.DisplayFor(model => model.LicenseName)</li>
+    <li class="list-group-item">Signature hash: @Html.DisplayFor(model => model.Signature.Hash)</li>
+    <li class="list-group-item">Signarure salt: @Html.DisplayFor(model => model.Signature.Salt)</li>
+</ul>
+
+<h1>Product list</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Name
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Products.ToList())
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductIdentifier)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
